@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenExperts Landscaping Victoria | Lawn Care, Gardens & Yard Cleanups</title>
+<meta name="description" content="Landscaping GreenExperts Victoria — professional lawn care, garden maintenance, hedge trimming, landscaping design and yard cleanups across Victoria, BC. Call (778) 653-4809.">
+<style>
+  :root { --green:#2e7d32; --green-d:#1b5e20; --leaf:#7cb342; --lime:#d4e157; --paper:#fbfdf8; --ink:#24352a; --soft:#eef5e9; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI',system-ui,-apple-system,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 22px; }
+
+  header { position:sticky; top:0; z-index:50; background:rgba(251,253,248,.97); backdrop-filter:blur(8px); border-bottom:1px solid #e2ecdd; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .logo { font-weight:800; font-size:1.3rem; color:var(--green-d); text-decoration:none; letter-spacing:.5px; }
+  .logo span { color:var(--leaf); }
+  .nav-links { display:flex; gap:26px; align-items:center; }
+  .nav-links a { text-decoration:none; color:#3d5244; font-weight:600; font-size:.95rem; }
+  .nav-links a:hover { color:var(--green); }
+  .btn { display:inline-block; background:var(--green); color:#fff !important; padding:12px 28px; border-radius:999px; font-weight:800; text-decoration:none; transition:.2s; border:none; cursor:pointer; font-size:1rem; }
+  .btn:hover { background:var(--green-d); transform:translateY(-1px); }
+  @media(max-width:780px){ .nav-links a:not(.btn){ display:none; } }
+
+  .hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; color:#fff; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; }
+  .hero-bg img { width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-shade { position:absolute; inset:0; background:linear-gradient(to top, rgba(15,35,18,.88) 0%, rgba(15,35,18,.3) 55%, rgba(15,35,18,.15) 100%); }
+  .hero-inner { position:relative; padding:70px 0 80px; width:100%; }
+  .hero .tag { display:inline-block; background:rgba(212,225,87,.18); border:1px solid rgba(212,225,87,.55); color:var(--lime); padding:8px 18px; border-radius:999px; font-size:.85rem; font-weight:800; margin-bottom:14px; letter-spacing:1px; text-transform:uppercase; }
+  .hero h1 { font-size:clamp(2.3rem,5.5vw,4rem); line-height:1.08; font-weight:800; max-width:800px; text-shadow:0 2px 20px rgba(0,0,0,.5); }
+  .hero h1 em { color:var(--lime); font-style:normal; }
+  .hero p.lead { font-size:1.18rem; max-width:660px; margin:18px 0 28px; color:#eef3ec; }
+  .hero-cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .phone-big { font-size:1.5rem; font-weight:800; color:#fff; text-decoration:none; }
+  .phone-big:hover { color:var(--lime); }
+  .badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+  .badges span { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.32); padding:8px 16px; border-radius:999px; font-size:.87rem; font-weight:600; backdrop-filter:blur(4px); }
+
+  section { padding:78px 0; }
+  .kicker { color:var(--green); font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:.82rem; margin-bottom:10px; }
+  h2 { font-size:clamp(1.7rem,3.5vw,2.5rem); font-weight:800; margin-bottom:14px; line-height:1.2; }
+  .sec-sub { color:#51625a; max-width:720px; margin-bottom:42px; font-size:1.05rem; }
+
+  .svc { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; margin-top:28px; }
+  .svc-card { background:#fff; border-radius:18px; overflow:hidden; border:1px solid #e2ecdd; box-shadow:0 8px 30px rgba(46,125,50,.09); }
+  .svc-card img { width:100%; height:180px; object-fit:cover; display:block; }
+  .svc-card .body { padding:22px 24px 26px; }
+  .svc-card h3 { font-size:1.12rem; margin-bottom:6px; }
+  .svc-card p { color:#51625a; font-size:.93rem; }
+  .svc-card .ico { font-size:1.7rem; }
+
+  .promise { background:var(--soft); border-radius:24px; padding:52px 40px; display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; }
+  @media(max-width:800px){ .promise{ grid-template-columns:1fr; } }
+  .promise img { width:100%; border-radius:18px; box-shadow:0 14px 40px rgba(46,125,50,.18); display:block; }
+  .promise p { color:#43564a; margin-bottom:12px; }
+  .promise ul { list-style:none; margin-top:16px; }
+  .promise li { padding:6px 0 6px 30px; position:relative; color:#33443b; font-weight:600; font-size:.96rem; }
+  .promise li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:800; }
+
+  .contact-band { background:linear-gradient(135deg, var(--green-d) 0%, #2f7a38 100%); color:#fff; border-radius:24px; padding:60px 32px; }
+  .contact-band h2 { color:#fff; }
+  .contact-band p { color:#cfe0cb; max-width:640px; margin:12px 0 8px; }
+  .contact-lines { margin:20px 0 30px; }
+  .contact-lines a { color:#fff; font-weight:800; text-decoration:none; font-size:1.4rem; display:block; margin:8px 0; }
+  .contact-lines a:hover { color:var(--lime); }
+  form { max-width:560px; }
+  form .row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:600px){ form .row{ grid-template-columns:1fr; } }
+  form label { display:block; font-weight:600; font-size:.9rem; margin:12px 0 6px; color:#eef3ec; }
+  form input, form select, form textarea { width:100%; padding:12px 14px; border:1.5px solid #6da86f; border-radius:12px; font-size:1rem; font-family:inherit; background:#14301a; color:#fff; }
+  form input::placeholder, form textarea::placeholder { color:#9db8a1; }
+  form textarea { min-height:90px; resize:vertical; }
+  form select option { background:#14301a; }
+
+  footer { background:#102315; color:#93a897; padding:36px 0; font-size:.92rem; }
+  footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; align-items:center; }
+  footer a { color:#fff; font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">🌿 GREEN<span>EXPERTS</span></a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="tel:+17786534809">(778) 653-4809</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-bg"><img src="photos/hero-garden.jpg" alt="Lush landscaped garden in Victoria BC"></div>
+  <div class="hero-shade"></div>
+  <div class="wrap hero-inner">
+    <div class="tag">Victoria, BC</div>
+    <h1>Victoria's <em>green</em> deserves expert care.</h1>
+    <p class="lead">Professional landscaping, lawn care, and garden maintenance for homes and businesses across Victoria — done right, done on time.</p>
+    <div class="hero-cta-row">
+      <a class="btn" href="#contact">Get a Free Quote</a>
+      <a class="phone-big" href="tel:+17786534809">📞 (778) 653-4809</a>
+    </div>
+    <div class="badges">
+      <span>🌱 Lawn care</span>
+      <span>🌸 Garden maintenance</span>
+      <span>✂️ Hedge trimming</span>
+      <span>🧹 Yard cleanups</span>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <h2>Everything your yard needs, one crew.</h2>
+    <div class="svc">
+      <div class="svc-card"><img src="photos/mowing.jpg" alt="Professional lawn mowing"><div class="body"><div class="ico">🌱</div><h3>Lawn Care</h3><p>Regular mowing, edging, and fertilization that keep your grass thick, green, and healthy.</p></div></div>
+      <div class="svc-card"><img src="photos/hero-garden.jpg" alt="Maintained garden beds"><div class="body"><div class="ico">🌸</div><h3>Garden Maintenance</h3><p>Seasonal care for your beds and borders — pruning, mulching, planting, and weeding.</p></div></div>
+      <div class="svc-card"><img src="photos/hedge.jpg" alt="Hedge trimming"><div class="body"><div class="ico">✂️</div><h3>Hedge Trimming</h3><p>Crisp, clean hedges shaped by hand — from privacy walls to decorative topiary.</p></div></div>
+      <div class="svc-card"><img src="photos/cleanup.jpg" alt="Yard after cleanup"><div class="body"><div class="ico">🧹</div><h3>Yard Cleanups</h3><p>Full property cleanups that reset your yard — leaves, debris, overgrowth, gone.</p></div></div>
+      <div class="svc-card"><div class="body"><div class="ico">🎨</div><h3>Landscape Design</h3><p>Thoughtful design that turns an ordinary yard into your favourite outdoor space.</p></div></div>
+      <div class="svc-card"><div class="body"><div class="ico">🏡</div><h3>Property Maintenance</h3><p>Ongoing care plans for homes, stratas, and commercial properties across Victoria.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="padding-top:0;">
+  <div class="wrap">
+    <div class="promise">
+      <div>
+        <div class="kicker">Why GreenExperts</div>
+        <h2>Victoria's garden city deserves better than average.</h2>
+        <p>In a city famous for its gardens, your yard gets noticed. We treat every property like it's on display — because in Victoria, it is.</p>
+        <ul>
+          <li>Local Victoria crew — we know the climate</li>
+          <li>Reliable schedules, tidy work</li>
+          <li>Residential &amp; commercial properties</li>
+          <li>Free quotes, honest pricing</li>
+        </ul>
+      </div>
+      <img src="photos/cleanup.jpg" alt="Tidy yard after a GreenExperts cleanup">
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0;">
+  <div class="wrap">
+    <div class="contact-band">
+      <div class="kicker" style="color:var(--lime);">Contact</div>
+      <h2>Let's talk about your yard.</h2>
+      <p>Call now or send the form for a free quote — we respond fast.</p>
+      <div class="contact-lines">
+        <a href="tel:+17786534809">📞 (778) 653-4809</a>
+      </div>
+      <form id="quoteForm">
+        <div class="row">
+          <div><label>Name<input required name="name" placeholder="Your name"></label></div>
+          <div><label>Phone<input required name="phone" type="tel" placeholder="(250) 555-0123"></label></div>
+        </div>
+        <label>Service needed
+          <select name="service"><option>Lawn Care</option><option>Garden Maintenance</option><option>Hedge Trimming</option><option>Landscape Design</option><option>Yard Cleanup</option><option>Ongoing Property Maintenance</option></select>
+        </label>
+        <label>Message<textarea name="msg" placeholder="Address, what your yard needs..."></textarea></label>
+        <button class="btn" type="submit" style="margin-top:18px;">Get My Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:#fff;">🌿 Landscaping GreenExperts Victoria</strong> · Victoria, BC · <a href="tel:+17786534809">(778) 653-4809</a></div>
+    <div>© 2026 GreenExperts Landscaping Victoria</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const subject = encodeURIComponent('Quote request — ' + f.get('service'));
+  const body = encodeURIComponent('Name: '+f.get('name')+'\nPhone: '+f.get('phone')+'\nService: '+f.get('service')+'\n\nMessage:\n'+f.get('msg'));
+  alert('Thanks, '+f.get('name')+'! Your request is ready — please call (778) 653-4809 to confirm, or we\'ll reach out shortly.');
+});
+</script>
+</body>
+</html>
